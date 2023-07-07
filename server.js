@@ -22,13 +22,16 @@ app.post("/", (req, res) => {
             if (data.error) {
                 console.error(data);
                 res.status(400).json(data);
+                return;
             }
             res.status(200).json(data);
+            return;
         }
     )
     .catch(err => {
         console.error(err);
         res.status(400).json(err);
+        return;
     });
 });
 
